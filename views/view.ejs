@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+<div>
+    <h3><%= data.name%>  </h3>
+    <li><%= data.conf%>  </li>
+    <li><%= data.death%></li>
+    <li><%= data.rec%>  </li>
+     <p><%= data.date%></p>
+    </div>
+    <form action="/view/<%= data.id%>?_method=DELETE" method="POST">
+        <input type="hidden" value="<%= data.id%>" name="id">
+        <button type="submit">delete</button>
+    </form>
+    <form action="/view/<%= data.id%>?_method=PUT" method="POST">
+        <input type="hidden" value="<%= data.id%>" name="id">
+                    <input type="text" value="<%= data.name%>" name="name">
+                    <input type="text" value="<%= data.conf%>" name="conf">
+                    <input type="text" value="<%= data.death%>" name="death">
+                    <input type="text" value="<%= data.rec%>" name="rec">
+                    <input type="text" value="<%= data.date%>" name="date">
+                    <button type="submit">update</button>
+    </form>
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

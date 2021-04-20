@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>All countries</h1>
+        <%- include('./layout/header.ejs') %>
+            </header>
+            <main>
+                <% result.forEach(elem => { %>
+                    <div>
+                        <h3><%= elem.name%>  </h3>
+                        <li><%= elem.conf%>  </li>
+                        <li><%= elem.death%></li>
+                        <li><%= elem.rec%>  </li>
+                         <p><%= elem.date%></p>
+                        <form action="/view/<%= elem.id%>" method="GET">
+                            <input type="hidden" value="<%= elem.id%>" name="id">  
+                        <button type="submit">View details</button>
+                        </form>
+                    </div>
+               <% }) %>
+            </main>
+            <footer>
+        
+            </footer>
+           
+</body>
+</html>

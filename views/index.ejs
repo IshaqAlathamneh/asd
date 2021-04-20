@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/base.css">
+</head>
+<body>
+    <header>
+        <h1>testing</h1>
+        <%- include('./layout/header.ejs') %>
+    </header>
+    <main>
+        <ul>
+            <li>the total cases in the world: <%= nar.TotalConfirmed %></li>
+            <li>the total deaths in world <%= nar.TotalDeaths %></li>
+            <li>the total recovered in world <%= nar.TotalRecovered %></li>
+        </ul>
+        <form action="/getCountryResult" method="GET">
+            <label for="country">enter the country name:</label>
+            <input type="text" name="country" value="jordan" id="country">
+            <button type="submit">search</button>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
